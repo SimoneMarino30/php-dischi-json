@@ -1,12 +1,35 @@
 .container {
-  background-color: coral;
+  background-color: #000000;
   height: 100vh;
 }
 
 .row {
-  border: 5px dashed blue;
+  /* border: 5px dashed blue; */
 }
 
 .col-2 {
+  /* border: 5px dashed green; */
+}
+
+.overlay {
   border: 5px dashed green;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.cover {
+  display: none;
+}
+
+.visible {
+  /* display: block; */
+  position: fixed;
+  z-index: 6;
 }

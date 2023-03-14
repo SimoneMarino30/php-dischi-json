@@ -16,9 +16,15 @@ createApp({
   data() {
     return {
       discs_list: [],
+      isActive: false,
     };
   },
-
+  methods: {
+    overlayOn() {
+      this.isActive = !this.isActive;
+      console.log(true);
+    },
+  },
   //   recupero (GET) info dalla API
   created() {
     // parte la richiesta per l'array

@@ -29,21 +29,45 @@
   <body>
     <div id="root">
       <header>lista dischi</header>
-      <section>
+      <section :class="{overlay: isActive}">
         <main class="container">
-          <div class="row">
+          <div class="row" :class="{cover: isActive}">
             <div
               class="card col-2 d-inline-block m-auto"
               style="width: 18rem"
               v-for="disc, i in discs_list"
+              @click="overlayOn()"
             >
-              <img :src="discs_list[i].poster" class="card-img-top" alt="..." />
+              <img
+                :src="discs_list[i].poster"
+                class="card-img-top"
+                alt="disc"
+              />
               <div class="card-body">
                 <h5 class="card-title">{{discs_list[i].title}}</h5>
                 <p class="card-text">{{discs_list[i].author}}</p>
                 <p class="card-text">{{discs_list[i].year}}</p>
               </div>
             </div>
+            <!-- overlay -->
+            <!-- <div
+              class="card col-2 m-auto"
+              :class="{visible: isActive}"
+              style="width: 18rem"
+              v-for="disc, i in discs_list"
+              @click="showDetailsDisc()"
+            >
+              <img
+                :src="discs_list[i].poster"
+                class="card-img-top"
+                alt="disc"
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{discs_list[i].title}}</h5>
+                <p class="card-text">{{discs_list[i].author}}</p>
+                <p class="card-text">{{discs_list[i].year}}</p>
+              </div>
+            </div> -->
           </div>
         </main>
       </section>
