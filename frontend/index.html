@@ -28,48 +28,43 @@
   </head>
   <body>
     <div id="root">
-      <header>lista dischi</header>
-      <section :class="{overlay: isActive}">
-        <main class="container">
-          <div class="row" :class="{cover: isActive}">
-            <div
-              class="card col-2 d-inline-block m-auto"
-              style="width: 18rem"
-              v-for="disc, i in discs_list"
-              @click="overlayOn()"
-            >
-              <img
-                :src="discs_list[i].poster"
-                class="card-img-top"
-                alt="disc"
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{discs_list[i].title}}</h5>
-                <p class="card-text">{{discs_list[i].author}}</p>
-                <p class="card-text">{{discs_list[i].year}}</p>
-              </div>
-            </div>
-            <!-- overlay -->
-            <!-- <div
-              class="card col-2 m-auto"
-              :class="{visible: isActive}"
-              style="width: 18rem"
-              v-for="disc, i in discs_list"
-              @click="showDetailsDisc()"
-            >
-              <img
-                :src="discs_list[i].poster"
-                class="card-img-top"
-                alt="disc"
-              />
-              <div class="card-body">
-                <h5 class="card-title">{{discs_list[i].title}}</h5>
-                <p class="card-text">{{discs_list[i].author}}</p>
-                <p class="card-text">{{discs_list[i].year}}</p>
-              </div>
-            </div> -->
-          </div>
+      <header>
+        <h1>DISCHI DISPONIBILI</h1>
+    </header>
+      <section :class="{overlay: isActive}" class="bg">
+        <main class="container position-relative">
+            <div class="row" :class="{cover: isActive}">
+                <div
+                    class="card col-2 d-inline-block m-5"
+                    style="width: 18rem"
+                    v-for="disc, i in discs_list"
+                    @click="overlayOn(i)"
+                >
+                <img
+                  :src="discs_list[i].poster"
+                   class="card-img-top"
+                   alt="disc"
+                />
+                <div class="card-body">
+                    <h5 class="card-title">{{discs_list[i].title}}</h5>
+                    <p class="card-text">{{discs_list[i].author}}</p>
+                    <p class="card-text">{{discs_list[i].year}}</p>
+                </div>
+            </div> 
         </main>
+        <!-- overlay -->
+                <div v-if="isActive == true" class="visible">
+                    <div class="card" style="width: 25rem;">
+                        <img :src="discs_list[indexActive].poster" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{discs_list[indexActive].title}}</h5>
+                            <p class="card-text">{{discs_list[indexActive].author}}</p>
+                            <p class="card-text">{{discs_list[indexActive].year}}</p>
+                            <p class="card-text">{{discs_list[indexActive].genre}}</p>
+                        </div>
+                    </div>
+                </div>    
+                <!-- overlay -->
       </section>
     </div>
   </body>

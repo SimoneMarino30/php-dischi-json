@@ -17,12 +17,14 @@ createApp({
     return {
       discs_list: [],
       isActive: false,
+      indexActive: "",
     };
   },
   methods: {
-    overlayOn() {
+    overlayOn(i) {
       this.isActive = !this.isActive;
-      console.log(true);
+      this.indexActive = i;
+      console.log(i);
     },
   },
   //   recupero (GET) info dalla API
