@@ -14,6 +14,12 @@
       crossorigin="anonymous"
     />
 
+    <!-- AXIOS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="./style.css" />
+
     <!-- VUE JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -21,6 +27,22 @@
     <script type="text/javascript" src="./main.js" defer></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <header>lista dischi</header>
+      <section>
+        <main>
+          <div class="container">
+            <div class="card" style="width: 18rem">
+              <img :src="discs_list[0].poster" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">{{discs_list[0].title}}</h5>
+                <p class="card-text">{{discs_list[0].author}}</p>
+                <p class="card-text">{{discs_list[0].year}}</p>
+              </div>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div>
   </body>
 </html>
