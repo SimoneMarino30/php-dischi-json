@@ -2,3 +2,11 @@
   background-color: coral;
   height: 100vh;
 }
+
+.row {
+  border: 5px dashed blue;
+}
+
+.col-2 {
+  border: 5px dashed green;
+}

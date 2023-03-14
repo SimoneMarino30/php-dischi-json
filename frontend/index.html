@@ -30,14 +30,18 @@
     <div id="root">
       <header>lista dischi</header>
       <section>
-        <main>
-          <div class="container">
-            <div class="card" style="width: 18rem">
-              <img :src="discs_list[0].poster" class="card-img-top" alt="..." />
+        <main class="container">
+          <div class="row">
+            <div
+              class="card col-2 d-inline-block m-auto"
+              style="width: 18rem"
+              v-for="disc, i in discs_list"
+            >
+              <img :src="discs_list[i].poster" class="card-img-top" alt="..." />
               <div class="card-body">
-                <h5 class="card-title">{{discs_list[0].title}}</h5>
-                <p class="card-text">{{discs_list[0].author}}</p>
-                <p class="card-text">{{discs_list[0].year}}</p>
+                <h5 class="card-title">{{discs_list[i].title}}</h5>
+                <p class="card-text">{{discs_list[i].author}}</p>
+                <p class="card-text">{{discs_list[i].year}}</p>
               </div>
             </div>
           </div>
